@@ -1,0 +1,38 @@
+.menu {
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    position: relative;
+    margin: 0 25px;
+    cursor: pointer;
+}
+
+.subMenu {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 100%;
+    left: 0;
+    padding: 30px;
+    box-shadow: 0 17px 24px rgba(0, 0, 0, 0.14);
+    background-color: #f8f8f8;
+    cursor: default;
+}
+
+.subMenu a {
+    display: block;
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    position: relative;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.active {
+    display: block;
+}

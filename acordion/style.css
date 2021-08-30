@@ -1,0 +1,129 @@
+.msg {
+    width: 300px;
+    margin-top: 20px;
+    overflow: hidden;
+    max-height: 0;
+    transition: .3s;
+}
+
+.msgActive {
+    max-height: 130px;
+}
+
+.plus {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    background: rgba(169, 202, 91, .2);
+    border-radius: 100%;
+    cursor: pointer
+}
+
+.plus__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: #9ec73d;
+    border-radius: 100%
+}
+
+.plus__content svg {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%)
+}
+
+.module__info-show {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 26px 14px 26px;
+    margin-top: 16px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 8px;
+    width: 260px
+}
+
+.module__info-show .plus {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px)
+}
+
+.module__info-show .show {
+    font-weight: 700;
+    line-height: normal;
+    font-size: 13px
+}
+
+
+
+.often-questions {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.often-questions h2 {
+    margin-bottom: 10rem;
+  }
+  .often-questions h2,
+  .often-questions .p-heading {
+    text-align: center;
+  }
+  .often-questions .accordion-heading {
+    font-size: 2.2rem;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+  }
+  .often-questions .accordion-heading span {
+    border-bottom: 2px dotted #333;
+  }
+  
+  .often-questions .active span{
+    color: #f99300;
+    border-bottom: none;
+  }
+  
+  .often-questions .accordion-block {
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 1rem;
+    background-color: #f7e7e6;
+    padding: 0;
+    transition: .3s;
+  }
+  
+  .often-questions .active {
+    max-height: none;
+    padding: 3rem 4rem;
+  }
+  
+  .often-questions .accordion-block:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -6rem;
+    border: 3rem solid transparent;
+    border-bottom: 3rem solid #f7e7e6;
+  }
+  .often-questions .ui-accordion-header-active {
+    cursor: auto;
+    color: #c51abb;
+    margin-bottom: 0;
+  }
+  .often-questions .ui-accordion-header-active span {
+    border-bottom: none;
+  }
+  .often-questions .ui-accordion-content-active {
+    margin-bottom: 4rem;
+  }
