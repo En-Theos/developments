@@ -1,0 +1,14 @@
+#red {
+    width: 300px;
+    height: 300px;
+    background-color: red;
+}
+
+#green {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    overflow: hidden;
+    margin: auto;
+}
+

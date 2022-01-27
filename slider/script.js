@@ -1,14 +1,14 @@
 function slider({selTape, selSlides, selButtonNext, selButtonPrev, selZeroSlide, 
-    direction = "vertical", leafedSlide = 1, activeClass = "card-active", autoSwitching = false, }) {
+    direction = "vertical", leafedSlide = 3, activeClass = "card-active", autoSwitching = false, navigation = false}) {
     const tape = document.querySelector(selTape);
     const slides = document.querySelectorAll(selSlides);
     const buttonsNext = document.querySelectorAll(selButtonNext);
     const buttonPrev = document.querySelectorAll(selButtonPrev);
     const logo = document.querySelectorAll(selZeroSlide);
 
-
+    let arrButton = [];
     let currentSlide = 0;
-    let maxCurrentSlide = slides.length - 1;
+    const maxCurrentSlide = slides.length - 1;
     let biasTape = 0;
     let heightSlide = 0;
     let widthSlide = 0;
@@ -26,6 +26,31 @@ function slider({selTape, selSlides, selButtonNext, selButtonPrev, selZeroSlide,
             auto = setInterval(() => {
                 switching(leafedSlide);
             }, 5000);
+        });
+    }
+
+    if (navigation) {
+        const navigationBox = document.createElement("div");
+        navigationBox.classList.add("navigationSlider");
+        tape.parentElement.append(navigationBox);
+
+        for (const i of slides) {
+            arrButton.push(document.createElement("div"));
+            arrButton.forEach(button => {
+                button.classList.add("navBtn");
+                document.querySelector(".navigationSlider").append(button);
+            });
+        }
+        arrButton[0].classList.add("btnActive");
+
+        arrButton.forEach((button, i) => {
+            button.addEventListener('click', () => {
+                arrButton.forEach(b => b.classList.remove("btnActive"));
+                arrButton[i].classList.add("btnActive");
+                currentSlide = 0;
+                biasTape = 0;
+                switching(i);
+            });
         });
     }
 
@@ -56,6 +81,11 @@ function slider({selTape, selSlides, selButtonNext, selButtonPrev, selZeroSlide,
         if (direction == "vertical" && document.URL.includes('modules')) {
             slides[currentSlide].style.height = "100vh";
         }
+
+        try {
+            arrButton.forEach(item => item.classList.remove("btnActive"));
+            arrButton[currentSlide].classList.add("btnActive");
+        } catch (error) {}
 
         checkDirection(() => {
             tape.style.transform = `translateY(-${biasTape}px)`;
@@ -108,5 +138,6 @@ slider({
     selButtonNext: ".slick-next", 
     selButtonPrev: ".slick-prev", 
     direction: "horizontal",
-    autoSwitching: true
+    autoSwitching: true,
+    navigation: true
 });

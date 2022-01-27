@@ -38,3 +38,9 @@ function card() {
         return data.json();
     }).then((data) => data.forEach(obj => new CardMenu(obj).generateCard()));
 }
+
+document.querySelector("#red").addEventListener('click', function (event) {
+    console.log(event.target);
+
+    console.log(this);
+});
